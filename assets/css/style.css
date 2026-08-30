@@ -1,0 +1,108 @@
+/* Lernabenteuer Webentwicklung – Basis-Stylesheet
+   Modern, freundlich, abenteuerlich. Responsiv & barrierearm. */
+
+:root {
+  --farbe-hintergrund: #fdf9f3;
+  --farbe-flaeche: #ffffff;
+  --farbe-text: #2b2340;
+  --farbe-akzent: #6c4df6;
+  --farbe-akzent-dunkel: #4c2fd6;
+  --farbe-erfolg: #2fa866;
+  --radius: 14px;
+  --schatten: 0 4px 16px rgba(43, 35, 64, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--farbe-text);
+  background: var(--farbe-hintergrund);
+}
+
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.tagline {
+  margin: 0 auto;
+  max-width: 42rem;
+  color: #5a4d7a;
+}
+
+main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.intro, .phases-preview {
+  background: var(--farbe-flaeche);
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+  padding: 1.5rem 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.phase-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .phase-list { grid-template-columns: 1fr 1fr; }
+}
+
+.phase-card {
+  border: 2px solid #eee8fa;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.phase-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--schatten);
+}
+
+.phase-badge {
+  display: inline-block;
+  background: var(--farbe-akzent);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.4rem;
+}
+
+.phase-card h3 { margin: 0.25rem 0 0.5rem; }
+.phase-card p { margin: 0; }
+
+.hint { color: #6f6591; font-size: 0.95rem; }
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2.5rem;
+  color: #6f6591;
+  font-size: 0.9rem;
+}
+
+.site-footer a { color: var(--farbe-akzent-dunkel); }
+
+/* Fokus-Sichtbarkeit (Barrierefreiheit) */
+a:focus-visible, .phase-card:focus-visible {
+  outline: 3px solid var(--farbe-akzent);
+  outline-offset: 2px;
+}

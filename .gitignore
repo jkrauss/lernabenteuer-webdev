@@ -1,0 +1,15 @@
+# Editor- & System-Dateien
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Logs & temporäre Dateien
+*.log
+tmp/
+.cache/
+
+# Lokale Umgebungen (sollten hier nie vorkommen, aber sicher ist sicher)
+.env
+.venv/
+node_modules/
