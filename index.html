@@ -3,58 +3,698 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lernabenteuer Webentwicklung – dein Schritt-für-Schritt-Kurs für HTML, CSS und JavaScript.">
-  <title>Lernabenteuer Webentwicklung</title>
+  <meta name="description" content="Lernabenteuer Webdev – dein Schritt-für-Schritt-Kurs: HTML, CSS, JavaScript, TypeScript und Frameworks. Mit Leveln, Missionen, XP und Badges.">
+  <meta name="color-scheme" content="light">
+  <title>Lernabenteuer Webdev – Baue echte Sachen fürs Internet</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/progress.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <h1>🗺️ Lernabenteuer Webentwicklung</h1>
-    <p class="tagline">Dein Schritt-für-Schritt-Weg zur eigenen Web-App – mit Leveln, Badges und Missionen.</p>
-  </header>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <main id="main">
-    <section class="intro">
-      <h2>Hallo, Abenteurerin! 👋</h2>
-      <p>
-        Hier startest du dein Lernabenteuer: Du lernst, wie man Webseiten baut –
-        zuerst das <strong>Gerüst (HTML)</strong>, dann die <strong>Optik (CSS)</strong>,
-        dann die <strong>Logik (JavaScript)</strong>. Kein Stress, kein Zeitdruck:
-        Jede Phase ist ein Kapitel, jede Mission ein Häkchen auf deiner Schatzkarte.
-      </p>
-    </section>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <p class="logo" aria-hidden="true">🗺️</p>
+    <div class="header-title">
+      <h1>Lernabenteuer Webdev</h1>
+      <p class="tagline">Du baust jetzt echte Sachen fürs Internet.</p>
+    </div>
+    <div class="hud" aria-label="Dein Fortschritt">
+      <div class="hud-stat">
+        <span class="hud-value" id="hud-xp">0</span>
+        <span class="hud-label">XP</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-value" id="hud-badges">0</span>
+        <span class="hud-label">Badges</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-value" id="hud-progress">0&thinsp;%</span>
+        <span class="hud-label">Fortschritt</span>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <section class="phases-preview" aria-label="Kurs-Phasen im Überblick">
-      <h2>Die Phasen deines Abenteuers</h2>
-      <ol class="phase-list">
-        <li class="phase-card">
-          <span class="phase-badge">Phase 1</span>
-          <h3>HTML – Das Gerüst 🧱</h3>
-          <p>Deine ersten Webseiten: Überschriften, Bilder, Links, Formulare.</p>
-        </li>
-        <li class="phase-card">
-          <span class="phase-badge">Phase 2</span>
-          <h3>CSS – Die Optik 🎨</h3>
-          <p>Farben, Layouts, Animationen – deine Seite sieht so aus, wie du willst.</p>
-        </li>
-        <li class="phase-card">
-          <span class="phase-badge">Phase 3</span>
-          <h3>JavaScript – Die Logik 🧠</h3>
-          <p>Deine Seite reagiert: Klicks, Spiele, kleine Programme im Browser.</p>
-        </li>
-        <li class="phase-card">
-          <span class="phase-badge">Phase 4</span>
-          <h3>Eigene Projekte 🚀</h3>
-          <p>Du baust eigene Apps – und lernst, wie Profis arbeiten (GitHub!).</p>
-        </li>
+<main id="main" class="wrap">
+
+  <section class="hero" aria-labelledby="hero-heading">
+    <h2 id="hero-heading">Du baust jetzt echte Sachen fürs Internet.</h2>
+    <p>Du hast in Scratch Figuren zum Laufen gebracht und in Code Combat Helden durch Labyrinthe gesteuert. Das ist ein echtes Fundament. Und jetzt kommt der nächste Schritt: Du lernst, echte Webseiten und Web-Apps zu bauen. Mit deinem eigenen Code, in deinem eigenen Stil. Am Ende geht dein Werk live, mit einem echten Link, den du an alle verschicken kannst.</p>
+    <p>Das hier ist kein normaler Kurs. Das ist ein Abenteuer in vier Leveln. Du sammelst XP, holst dir Badges, schaltest ein Level nach dem nächsten frei. Und nach jedem Level hältst du etwas in der Hand, das wirklich funktioniert. Dein erster Erfolg kommt nicht in Wochen, sondern in deiner ersten Session.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#level-1" data-start-btn>Los geht’s → Level 1</a>
+      <a class="btn btn-secondary" href="#level-karte">Zeig mir die Level-Karte</a>
+    </div>
+    <table class="data-table hero-table">
+      <caption class="sr-only">Deine Reise auf einen Blick</caption>
+      <tbody>
+        <tr><th scope="row">Level</th><td>4: HTML/CSS → JavaScript → TypeScript → React oder Vue</td></tr>
+        <tr><th scope="row">Missionen</th><td>10 Missionen + 4 Nebenquests</td></tr>
+        <tr><th scope="row">XP</th><td>3.200 Kern-XP, bis zu 4.000 mit allen Nebenquests</td></tr>
+        <tr><th scope="row">Dauer</th><td>26–33 Wochen, ca. 3–4 Stunden pro Woche neben der Schule</td></tr>
+        <tr><th scope="row">Streak</th><td>wöchentlich, mit 4 Schutzwochen (Freezes) pro Level</td></tr>
+        <tr><th scope="row">Voraussetzung</th><td>Deine Scratch- und Code-Combat-Erfahrung reicht. Plus Neugier.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="callout callout-gold" aria-labelledby="eiserne-regel-heading">
+    <h2 id="eiserne-regel-heading">Eine goldene Regel, bevor du loslegst</h2>
+    <p><strong>Kein Framework (React, Vue, HTMX), bevor du eine To-Do-Liste und eine Boss-App in purem JavaScript gebaut und erklärt hast.</strong></p>
+    <p>Warum so streng? Frameworks sind Riesenkisten voller Elektrowerkzeug. Sie lösen Probleme. Aber du kennst die Probleme noch nicht. Wer React lernt, bevor sie JavaScript kann, hält Zaubertricks für Handwerk: Es sieht beeindruckend aus, aber wenn etwas kaputtgeht, weiß niemand, warum.</p>
+    <p>Deshalb: erst das Fundament, dann der Baukasten. In Level 4 wirst du das Problem, das Frameworks lösen, zum ersten Mal selbst spüren. Genau in dem Moment wird React von Zauberei zu Werkzeug. Das ist der beste Aha-Moment des ganzen Abenteuers, und du verdienst ihn dir.</p>
+  </section>
+
+  <section class="level-map" aria-labelledby="level-karte-heading">
+    <h2 id="level-karte-heading">Die Level-Karte</h2>
+    <p>Vier Level, eine feste Reihenfolge. Wie in einem guten Spiel: Level 2 schaltest du frei, wenn du Level 1 gemeistert hast. Und „gemeistert“ heißt hier: nach klaren Kriterien, nicht nach Bauchgefühl. Die Fortschritts-Anzeige oben zeigt dir jederzeit deine XP, deine Badges und deinen Fortschritt.</p>
+    <div class="level-grid">
+      <a class="level-card" href="#level-1" data-level-card="1">
+        <span class="level-num" aria-hidden="true">1</span>
+        <h3>Skelett &amp; Haut</h3>
+        <p>HTML &amp; CSS: Seiten bauen und schön machen. Erste Erfolge in Minuten.</p>
+        <p class="level-meta">4–6 Wochen · Badge: Gerüstbauerin</p>
+        <p class="level-card-progress" data-level-card-progress="1">0 %</p>
+      </a>
+      <a class="level-card" href="#level-2" data-level-card="2">
+        <span class="level-num" aria-hidden="true">2</span>
+        <h3>Gehirn</h3>
+        <p>JavaScript: Deine Seite lernt reagieren. Das längste und wichtigste Level.</p>
+        <p class="level-meta">10–12 Wochen · Badge: Gehirnchirurgin</p>
+        <p class="level-card-progress" data-level-card-progress="2">0 %</p>
+      </a>
+      <a class="level-card" href="#level-3" data-level-card="3">
+        <span class="level-num" aria-hidden="true">3</span>
+        <h3>Schutzschild</h3>
+        <p>TypeScript: Fehler finden, bevor sie passieren.</p>
+        <p class="level-meta">4–5 Wochen · Badge: Schildträgerin</p>
+        <p class="level-card-progress" data-level-card-progress="3">0 %</p>
+      </a>
+      <a class="level-card" href="#level-4" data-level-card="4">
+        <span class="level-num" aria-hidden="true">4</span>
+        <h3>Baumeisterin</h3>
+        <p>React oder Vue: Apps bauen wie die Profis.</p>
+        <p class="level-meta">8–10 Wochen · Badge: Baumeisterin</p>
+        <p class="level-card-progress" data-level-card-progress="4">0 %</p>
+      </a>
+    </div>
+    <p class="hint">Der Rhythmus dahinter: unter der Woche 2–3 kurze Sessions (20–45 Minuten) plus am Wochenende eine größere Projekt-Session (60–90 Minuten). Das sind ca. 3–4 Stunden pro Woche, und es passt neben Schule, Freunde und alles andere. Insgesamt ungefähr 104 Stunden bis zum Abschluss. Das klingt viel. In Leveln und Sessions zerlegt ist es einfach dein neues Hobby.</p>
+  </section>
+
+  <section class="howto" aria-labelledby="so-funktioniert-heading">
+    <h2 id="so-funktioniert-heading">So funktioniert diese Seite</h2>
+    <ol class="howto-list">
+      <li><strong>Missionen sind deine Bauprojekte.</strong> Jedes Level hat Missionen: kleine, klare Aufträge mit Schritt-für-Schritt-Anleitung und einem „Fertig, wenn …“-Ziel. Du hakest jede Aufgabe ab, und die Seite merkt sich deinen Fortschritt. Ganz ohne Login: Deine Daten bleiben in deinem Browser gespeichert.</li>
+      <li><strong>XP für alles, was du baust.</strong> Quick-Win 100 · Kern-Mission 250 · Boss-Mission 500 · Nebenquest 50–100 XP pro Aufgabe (der JS30-Streak in Level 2 summiert sich: 10 Projekte à 50 XP = bis zu 500 XP).</li>
+      <li><strong>Badges für jeden Meilenstein.</strong> Jede Mission bringt ein Abzeichen, jede Boss-Mission ein Boss-Badge, und jedes Level-Up schaltet den Level-Badge frei. Deine Sammlung ist immer sichtbar.</li>
+      <li><strong>Streak ohne Druck.</strong> Eine Woche zählt als Streak-Woche, wenn mindestens zwei Sessions drin waren (eine Session = 20–45 Minuten). Wochen-Takt statt Tages-Zwang, damit es zum Schulalltag passt. Und: Du bekommst 4 Streak-Freezes pro Level. Krank oder Klausurenphase? Freeze einsetzen, Serie bleibt. Eine schlechte Woche killt deine Streak nie.</li>
+      <li><strong>Level-Up nach klaren Kriterien.</strong> Am Ende jedes Levels steht eine kleine Liste: Was muss fertig sein? Dazu der „Erklär-Test“: Du erklärst eine eigene Funktion jemandem in zwei Sätzen, ohne auf den Bildschirm zu schauen. Wer erklären kann, hat wirklich verstanden. Wer nur nachtippen kann, nicht. Das ist kein Trick, das ist dein fairer Beweis.</li>
+      <li><strong>Selbst tippen statt kopieren.</strong> Code tippst du immer selbst ab, nie Copy-Paste. Genau wie beim Instrumentenlernen sitzt das Gelernte erst, wenn es durch deine eigenen Finger gegangen ist. Muscle Memory heißt das beim Programmieren, und das trainierst du nur durch eigenes Tippen.</li>
+      <li><strong>Dein Interessen-Check.</strong> Bevor du in die erste Boss-Mission gehst, überleg dir kurz: Welche Band, welchen Streamer, welches Spiel, welchen Sport, welche Serie liebst du? Zeichnest du gern? Hast du ein Haustier? Die Boss-Missionen haben Wahlmöglichkeiten, und je näher das Projekt an deinen echten Interessen liegt, desto mehr Spaß macht das Bauen.</li>
+    </ol>
+    <h3 id="englisch-heading">Übrigens: Englisch ist okay</h3>
+    <p>Auf deinen Ressourcen-Karten siehst du Sprachen-Labels. Einiges ist als englisch markiert, und das ist kein Unfall: In der Dev-Welt ist englischsprachiges Material einfach der Normalfall. Profis lesen jeden Tag englische Doku und suchen auf Englisch. Du brauchst dafür kein perfektes Englisch: Lernvideo-Englisch ist langsam, klar und voller bekannter Fachwörter, die du beim Tippen sowieso lernst. Deine Basis bleibt deutsch (SELFHTML und MDN gibt’s komplett auf Deutsch), die englischen Karten sind Bonus. Und in Level 4 wartet eine schöne Überraschung: Die offiziellen React- und Vue-Tutorials gibt es komplett auf Deutsch.</p>
+  </section>
+
+  <section class="callout callout-error" aria-labelledby="fehler-heading">
+    <h2 id="fehler-heading">Wenn die Konsole rot leuchtet: Fehler sind Schatzkarten</h2>
+    <p>Irgendwann passiert es: Du tippst etwas, drückst Enter, und statt deines Ergebnisses kommt eine kryptische rote Meldung. Herzlich willkommen. Das ist der wichtigste Moment des ganzen Abenteuers, und zwar wirklich.</p>
+    <p>Jede Software, die du liebst, von deiner Lieblings-App bis zu deinem Lieblingsspiel, steckt voller behobener Fehler. Profis tippen praktisch nie beim ersten Versuch fehlerfreien Code. Der Unterschied zwischen Anfängerin und Profi ist nur einer: Profis haben gelernt, Fehlermeldungen zu lesen, statt Angst vor ihnen zu haben.</p>
+    <p>Eine Fehlermeldung ist keine Katastrophe, sondern eine Schatzkarte. Sie sagt dir, was schiefgelaufen ist, und oft auch in welcher Zeile. Deshalb dein Protokoll, wann immer etwas rot leuchtet:</p>
+    <ol class="error-protocol">
+      <li><strong>Lies die Meldung von vorne.</strong> Wort für Wort, ohne Panik. Steht da „is not defined“? Dann fehlt irgendwo ein Name. Steht da eine Zeilennummer? Perfekt, dort steht das Problem.</li>
+      <li><strong>Guck in die Konsole.</strong> <code>console.log</code> zeigt dir, was wirklich in deinen Variablen steckt. Meist ist die Überraschung kleiner als die Angst davor.</li>
+      <li><strong>Such nach der Meldung.</strong> Profis googeln ständig. Das ist keine Schande, das ist Handwerk. Und MDN erklärt fast alles auf Deutsch.</li>
+      <li><strong>Frag.</strong> Aber nicht „Es geht nicht!“, sondern mit den zwei Fragen, die dich weiterbringen: „Was sagt die Konsole?“ und „Was hast du schon probiert?“</li>
+    </ol>
+    <p>Und wenn das Terminal mal „Command not found“ sagt, heißt das nur: Der Computer hat dich nicht verstanden. Es heißt nicht, dass du schlecht bist.</p>
+  </section>
+
+  <section class="level" id="level-1" aria-labelledby="level-1-heading" data-level-section="1">
+    <div class="level-head">
+      <span class="level-num" aria-hidden="true">1</span>
+      <div>
+        <h2 id="level-1-heading">Skelett &amp; Haut <span class="level-sub">(HTML &amp; CSS)</span></h2>
+        <p class="level-stats"><strong>Dauer:</strong> 4–6 Wochen (ca. 18 h) · <strong>Werkzeug:</strong> nur dein Browser und ein einfacher Texteditor. Nichts installieren, kein Terminal. · <strong>Badge am Ende:</strong> Gerüstbauerin</p>
+      </div>
+    </div>
+    <div class="level-progress">
+      <div class="progress-bar" role="progressbar" aria-label="Fortschritt Level 1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-level-progress-bar="1"><div class="progress-fill"></div></div>
+      <p class="progress-label" data-level-progress-label="1">0 % erledigt</p>
+    </div>
+
+    <h3>Warum dieses Level</h3>
+    <p>Jede Website, die du kennst, hat zwei Schichten: ein Skelett (HTML) und eine Haut (CSS). Genau die baust du hier. Und das Beste: Du musst kein einziges Programm installieren. Kein Setup, kein Terminal, kein „Command not found“. Tippen, speichern, Browser neu laden, fertig. Was du änderst, siehst du im selben Moment auf dem Bildschirm. Deine ersten richtigen Erfolge kommen in Minuten, nicht in Wochen.</p>
+    <p>Warum startest du hier und nicht gleich bei JavaScript? Weil du erst einen Körper baust und ihm dann ein Gehirn gibst. Bis dahin hast du schon mehrere Dinge gebaut, die du stolz verschicken kannst. Genau diese schnellen, sichtbaren Erfolge tragen dich durchs ganze Abenteuer.</p>
+
+    <h3>Was du lernst (und wofür es gut ist)</h3>
+    <ul>
+      <li><strong>Seiten strukturieren:</strong> Überschriften, Texte, Bilder, Listen und Links, sauber geordnet im Grundgerüst (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>footer</code>). Wofür: Damit deine Seite kein Texthaufen ist, sondern ein ordentliches Haus, das auch Suchmaschinen und Vorlese-Programme verstehen.</li>
+      <li><strong>Gestalten mit CSS:</strong> eigene CSS-Datei einbinden, Farben, Schriften und Abstände gezielt verändern. Wofür: Aus „irgendwie komisch“ wird „genau so, wie ich es will“.</li>
+      <li><strong>Layout mit Flexbox:</strong> Karten nebeneinander, Spalten zentrieren. Wofür: Flexbox ist das Layout-Werkzeug des Webs — damit sieht deine Seite auf einmal „echt“ aus.</li>
+      <li><strong>Responsive Design mit Media Query:</strong> Deine Seite sieht auf dem Handy und auf dem Computer gut aus. Wichtig, denn die Hälfte deiner Besucher kommt vom Handy.</li>
+      <li><strong>Selbst nachschlagen können:</strong> in SELFHTML und MDN (beides Deutsch) die Antwort auf jede Gestaltungsfrage finden. Wofür: Das ist die eigentliche Superkraft dieses Levels. Profis wissen nicht alles auswendig, sie wissen, wo es steht.</li>
+    </ul>
+
+    <h3>Deine Ressourcen</h3>
+    <div class="resource-grid">
+      <a class="resource-card" href="https://wiki.selfhtml.org/wiki/Einstieg_in_HTML" target="_blank" rel="noopener">
+        <span class="res-title">SELFHTML: „Einstieg in HTML“</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Dein Hauptpfad: ein geführtes Schritt-für-Schritt-Tutorial, das dich durchs ganze Level begleitet.</span>
+      </a>
+      <a class="resource-card" href="https://wiki.selfhtml.org/" target="_blank" rel="noopener">
+        <span class="res-title">SELFHTML-Wiki</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Das Nachschlagewerk für zwischendurch: „Wie ging Flexbox nochmal?“</span>
+      </a>
+      <a class="resource-card" href="https://developer.mozilla.org/de/" target="_blank" rel="noopener">
+        <span class="res-title">MDN Web Docs auf Deutsch</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Das „Wörterbuch des Webs“ vom Mozilla-Team, Industriestandard. Wenn SELFHTML eine Antwort nicht hat, steht sie hier. Profis nutzen MDN täglich.</span>
+      </a>
+      <a class="resource-card" href="https://scrimba.com/" target="_blank" rel="noopener">
+        <span class="res-title">Scrimba: „Learn HTML and CSS“</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">5 Projekte und über 75 Challenges, direkt im Browser tippbar. Perfekt, wenn du statt Lesen lieber sofort mitmachst.</span>
+      </a>
+      <a class="resource-card" href="https://www.freecodecamp.org/learn/responsive-web-design-v9/" target="_blank" rel="noopener">
+        <span class="res-title">freeCodeCamp: „Responsive Web Design“</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Optional: strukturierte Challenges mit Zertifikat, Badges und einer riesigen Community hinter dir. Extra-Motivation für Extra-Tage.</span>
+      </a>
+      <a class="resource-card" href="https://www.youtube.com/@ProgrammierenMario" target="_blank" rel="noopener">
+        <span class="res-title">„Programmieren mit Mario“ (YouTube)</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Video-Begleitung („Webentwicklung ohne Bullshit“), wenn du lieber hörst und zuschaust statt zu lesen.</span>
+      </a>
+    </div>
+
+    <h3>Deine Missionen</h3>
+
+    <article class="mission" data-mission="M1.1" data-xp="100">
+      <header class="mission-head">
+        <h4>M1.1 „Hello, Web!“</h4>
+        <span class="xp-chip">Quick-Win · 100 XP</span>
+      </header>
+      <p>Deine allererste eigene Website. Mal sehen, wie schnell du wirklich eine hast.</p>
+      <ol>
+        <li>Öffne einen Texteditor (unter Windows heißt er „Editor“, auf dem Mac „TextEdit“, er ist auf jedem Computer drauf). Speichere eine neue Datei als <code>meine-seite.html</code>. Das <code>.html</code> macht sie zu einer Website: Doppelklick, und sie öffnet sich im Browser.</li>
+        <li>Tippe das HTML-Grundgerüst für eine Seite. Das SELFHTML-Einstiegstutorial zeigt dir jede einzelne Zeile. (Wer lieber interaktiv tippt: Scrimba geht auch.)</li>
+        <li>Fülle deine Seite mit Leben: einen Titel (z. B. „Ich bin’s!“), einen Satz über dich, ein Bild, eine Liste (deine Top-Spiele, Lieblingsbands, was immer du willst) und einen Link auf deine Lieblingswebsite.</li>
+        <li>Speichern, dann im Browser neu laden (F5). Ändere irgendetwas, speichern, neu laden. Dieses „tippen, speichern, nachgucken“ ist der Rhythmus des ganzen Abenteuers.</li>
+        <li>Arbeite parallel die ersten SELFHTML-Kapitel durch, damit du weißt, warum deine Zeilen funktionieren.</li>
       </ol>
-      <p class="hint">Volle Details zu jeder Phase folgen in den nächsten Ausbaustufen dieser Seite.</p>
-    </section>
-  </main>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M1.1-1"> deine Seite im Browser aufgeht</label>
+        <label class="check"><input type="checkbox" data-check="M1.1-2"> deine Liste und dein Link klickbar sind</label>
+        <label class="check"><input type="checkbox" data-check="M1.1-3"> du alles selbst getippt hast (nichts kopiert)</label>
+        <label class="check"><input type="checkbox" data-check="M1.1-4"> die ersten SELFHTML-Kapitel durch sind</label>
+      </fieldset>
+      <p class="mission-note">Vorhin hattest du keine Website. Jetzt hast du eine. So fühlt sich Entwickeln an.</p>
+    </article>
 
-  <footer class="site-footer">
-    <p>Gebaut mit ❤️ als Lernprojekt · <a href="https://github.com/jkrauss/lernabenteuer-webdev">Quellcode auf GitHub</a></p>
-  </footer>
+    <article class="mission" data-mission="M1.2" data-xp="250">
+      <header class="mission-head">
+        <h4>M1.2 „Fan-Seite“</h4>
+        <span class="xp-chip">Kern-Mission · 250 XP</span>
+      </header>
+      <p>Bau eine Fan-Seite für etwas, das du liebst: Band, Streamer, Buch, Film, Fußballverein, Lieblingstier — dir steht alles frei. (Interessen-Check!)</p>
+      <ol>
+        <li>Plan auf Papier: Kopfzeile mit dem Namen, „Über“-Abschnitt, eine Liste mit 3 Fakten, Galerie mit mindestens 3 Bildern, unten eine Fußzeile.</li>
+        <li>Tippe die Struktur in HTML — alles, was du in M1.1 gelernt hast, jetzt eine Größenordnung schöner.</li>
+        <li>Lagere die Styles in eine eigene CSS-Datei aus. Wähle deine Farben, deine Schrift (z. B. über Google Fonts), deine Abstände.</li>
+        <li>Bau ein Flexbox-Layout (z. B. die Bild-Karten nebeneinander) und füge einen Hover-Effekt hinzu: Wenn die Maus über ein Bild fährt, leuchtet es auf.</li>
+        <li>Füge eine Media Query hinzu und prüfe auf dem Handy: Sieht die Seite dort gut aus?</li>
+        <li>Zeig sie einem deiner Elternteile und erkläre für jedes HTML-Teil, was es bewirkt.</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M1.2-1"> die Fan-Seite auf dem Handy gut aussieht</label>
+        <label class="check"><input type="checkbox" data-check="M1.2-2"> Flexbox-Layout und Hover-Effekt drin sind</label>
+        <label class="check"><input type="checkbox" data-check="M1.2-3"> du jedem Elternteil zeigen kannst, welches HTML-Teil was bewirkt</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-boss" data-mission="M1.3" data-xp="500">
+      <header class="mission-head">
+        <h4>M1.3 BOSS „Dein Portfolio“</h4>
+        <span class="xp-chip">Boss-Mission · 500 XP</span>
+      </header>
+      <p>Die große Prüfung des Levels. Du baust deine persönliche Portfolio-Seite — „Über mich“, Hobby-Karten, Bildergalerie, Kontakt. Und dann fliegt sie ins echte Internet.</p>
+      <ol>
+        <li>Plane vier Bereiche: „Über mich“, Hobby-Karten, Galerie, Kontakt. Skizziere zuerst auf Papier, tippe dann.</li>
+        <li>Bau die Seite mit allem, was du gelernt hast, vollständig responsive.</li>
+        <li>Bring sie live: Netlify Drop heißt — fertige Dateien einfach ins Browser-Fenster ziehen, fertig. Oder GitHub Pages über den Account deiner Eltern. Hier darfst du Hilfe fragen, das zählt als Teamarbeit.</li>
+        <li>Der Oma-Test: Schick den Link an Oma (oder liebe Verwandte, einfach jemand mit Handy). Kann sie die Seite öffnen und findet sie sich zurecht? Wenn ja: bestanden.</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M1.3-1"> deine Portfolio-Seite online ist und auf dem Handy funktioniert</label>
+        <label class="check"><input type="checkbox" data-check="M1.3-2"> du den Oma-Test bestanden hast</label>
+        <label class="check"><input type="checkbox" data-check="M1.3-3"> du den Erklär-Test bestehst (das Ziel aus der Level-Up-Liste unten)</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-side" data-mission="N1.1" data-xp="100">
+      <header class="mission-head">
+        <h4>N1.1 Nebenquest „Scrimba-Sprint“</h4>
+        <span class="xp-chip">Nebenquest · bis zu 100 XP</span>
+      </header>
+      <p>Für Tage, an denen du nur snacken willst: Schließ das Scrimba-HTML/CSS-Kursmodul ab (oder meistere 5 Challenges). Bonus, kein Pflichtprogramm.</p>
+    </article>
+
+    <div class="level-up">
+      <h3>Level-Up: Der Schlüssel zu Level 2</h3>
+      <fieldset class="checks">
+        <legend>Level-Up-Kriterien</legend>
+        <label class="check"><input type="checkbox" data-check="L1-1"> Portfolio ist online und handy-tauglich (Oma-Test bestanden)</label>
+        <label class="check"><input type="checkbox" data-check="L1-2"> Erklär-Test: Was passiert, wenn man den CSS-<code>&lt;link&gt;</code> aus einer HTML-Datei entfernt? Erzähl es in zwei Sätzen, ohne auf den Bildschirm zu schauen.</label>
+        <label class="check"><input type="checkbox" data-check="L1-3"> MDN-Blitz: Finde in MDN (de) in unter 5 Minuten heraus, wie ein HTML-Element geschrieben wird, das du noch nicht kennst.</label>
+      </fieldset>
+      <p class="badge-award">Wenn alle drei Haken drin sind: <strong>Badge „Gerüstbauerin“</strong>. Dein Skelett steht. Zeit, ihm ein Gehirn zu geben.</p>
+    </div>
+  </section>
+
+  <section class="level" id="level-2" aria-labelledby="level-2-heading" data-level-section="2">
+    <div class="level-head">
+      <span class="level-num" aria-hidden="true">2</span>
+      <div>
+        <h2 id="level-2-heading">Gehirn <span class="level-sub">(JavaScript)</span></h2>
+        <p class="level-stats"><strong>Dauer:</strong> 10–12 Wochen (ca. 38 h), das längste und wichtigste Level · <strong>Werkzeug:</strong> Browser + ein Editor (VS Code, oder komplett online mit CodePen oder Scrimba). Kein npm, keine Pakete, keine Installationen — alles bleibt pures JavaScript. · <strong>Badge am Ende:</strong> Gehirnchirurgin</p>
+      </div>
+    </div>
+    <div class="level-progress">
+      <div class="progress-bar" role="progressbar" aria-label="Fortschritt Level 2" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-level-progress-bar="2"><div class="progress-fill"></div></div>
+      <p class="progress-label" data-level-progress-label="2">0 % erledigt</p>
+    </div>
+
+    <h3>Warum dieses Level</h3>
+    <p>Bis hierhin war deine Seite schön, aber stumm: Sie zeigt, was du tippst, mehr nicht. Ab jetzt lernt deine Seite zu reagieren. Klick auf einen Button, und etwas passiert. Ein Tastendruck löst einen Sound aus. Eine Liste merkt sich morgen noch, was du heute reingeschrieben hast. JavaScript ist das Gehirn deiner Seite, und es ist die Sprache, in der fast das ganze Web denkt.</p>
+    <p>Ehrlich: Das Level ist lang. Und es ist das wichtigste des ganzen Abenteuers. Wer JavaScript wirklich kann, kann alles lernen, was danach kommt, inklusive React. Deshalb gibt es hier keine Abkürzungen und kein Framework, das dir Arbeit abnimmt: Du baust alles selbst. Das ist kein Verzicht, das ist das Training, das dich zur Programmiererin macht. („Vanilla JS“ heißt übrigens nichts weiter als: pures JavaScript ohne Hilfsmittel.)</p>
+    <p>Die Belohnung: Deine Siege in diesem Level sind echte Siege. Dein Drum-Kit spielt auf Tastendruck. Deine To-Do-Liste übersteht einen Browser-Neustart. Das sind keine Übungsaufgaben, das sind Maschinen, die du gebaut hast.</p>
+
+    <h3>Was du lernst (und wofür es gut ist)</h3>
+    <ul>
+      <li><strong>Variablen und Datentypen</strong> (<code>let</code>, <code>const</code>; Strings, Numbers, Booleans, Arrays, Objekte): kleine beschriftete Kisten, in denen sich dein Programm Dinge merkt. Wofür: Punktestände, Namen, Aufgaben — ohne dass ein einziger Wert verloren geht.</li>
+      <li><strong>Eigene Funktionen</strong> mit Parametern und Rückgabewert: ein Rezept, das du immer wieder verwenden kannst. Parameter sind die Zutaten, dein Rückgabewert das fertige Gericht.</li>
+      <li><strong>Entscheidungen und Schleifen</strong> (<code>if</code>/<code>else</code>, <code>for</code>, <code>for...of</code>, <code>forEach</code>): dein Programm prüft Bedingungen und wiederholt Arbeit, ohne dass du alles zehnmal tippst.</li>
+      <li><strong>Elemente live verändern</strong> (<code>querySelector</code>, <code>textContent</code>, <code>classList</code>): Das DOM ist das sichtbare Innere deiner Seite, jedes Element ein Baustein davon. Du wählst ein Element aus und veränderst es live, während die Seite offen ist. Wofür: Klick — Reaktion, ohne Reload.</li>
+      <li><strong>Ereignisse</strong> (<code>click</code>, <code>keydown</code>, <code>input</code>, <code>submit</code>): die Ohren deiner Seite. Jetzt hört sie auf dich.</li>
+      <li><strong>Array-Werkzeuge</strong> (<code>push</code>, <code>filter</code>, <code>find</code>, <code>map</code>): sammeln, filtern, umformen. Wofür: Deine Datenmengen werden beherrschbar.</li>
+      <li><strong>Speichern mit <code>localStorage</code> + JSON:</strong> ein kleiner Schrank im Browser, in dem Daten bleiben, auch nach dem Schließen. Wofür: Deine Apps merken sich ihre Dinge morgen noch.</li>
+      <li><strong><code>console.log</code> und Fehlermeldungen lesen:</strong> deine Werkstatt. Du guckst rein, was wirklich passiert, statt zu raten. Eine Fehlermeldung ist deine Schatzkarte (das Protokoll kennst du ja schon).</li>
+      <li><strong>Template-Literals:</strong> Werte einfach in Texte einbauen, wie <code>`Hallo, ${name}!`</code>.</li>
+    </ul>
+
+    <h3>Deine Ressourcen</h3>
+    <div class="resource-grid">
+      <a class="resource-card" href="https://javascript30.com/" target="_blank" rel="noopener">
+        <span class="res-title">JavaScript30 (Wes Bos)</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Dein roter Faden: 30 Mini-Projekte, null Frameworks. Ein Projekt pro Session, und jedes läuft danach wirklich. Genau das Muscle-Memory-Training, das dich fit macht.</span>
+      </a>
+      <a class="resource-card" href="https://developer.mozilla.org/de/docs/Web/JavaScript" target="_blank" rel="noopener">
+        <span class="res-title">MDN JavaScript auf Deutsch</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Deine Haupt-Nachschlage-Adresse: „Wie ging <code>forEach</code> nochmal?“ steht hier auf Deutsch.</span>
+      </a>
+      <a class="resource-card" href="https://scrimba.com/" target="_blank" rel="noopener">
+        <span class="res-title">Scrimba: „Learn JavaScript“</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">9 Module, 140+ Challenges, interaktiv. Für Tage mit wenig Energie: klein, nett, machbar.</span>
+      </a>
+      <a class="resource-card" href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" target="_blank" rel="noopener">
+        <span class="res-title">freeCodeCamp: „JavaScript Algorithms“</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Optional: strukturierte Übungsreihen plus Zertifikat, wenn dich sowas zum Weitermachen motiviert.</span>
+      </a>
+      <a class="resource-card" href="https://www.youtube.com/@coding-kurzundknapp" target="_blank" rel="noopener">
+        <span class="res-title">„Coding — kurz und knapp“ (YouTube)</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Deutsche Video-Erklärungen rund ums Webdev, wenn du Hören und Sehen magst.</span>
+      </a>
+      <a class="resource-card" href="https://javascript.info/" target="_blank" rel="noopener">
+        <span class="res-title">javascript.info</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Der Tiefen-Pfad: wenn du ein Thema wirklich bis auf den Grund verstehen willst. Ehrlich gesagt: Eine deutsche Version gibt es davon nicht. Auch das gehört zur Dev-Welt.</span>
+      </a>
+    </div>
+    <p class="hint">Empfehlung für dieses Level: JavaScript30 als roten Faden (eine kleine, sofort sichtbare Sache pro Session), MDN (de) daneben als Nachschlagewerk, Scrimba für die Low-Energy-Tage.</p>
+
+    <h3>Deine Missionen</h3>
+
+    <article class="mission" data-mission="M2.1" data-xp="100">
+      <header class="mission-head">
+        <h4>M2.1 „Es lebt!“</h4>
+        <span class="xp-chip">Quick-Win · 100 XP</span>
+      </header>
+      <p>Alles, was du bisher gebaut hast, reagierte auf nichts. Das endet heute. Deine erste Seite mit einem Herzschlag.</p>
+      <ol>
+        <li>Wähle dein erstes Maschinen-Projekt: ein <strong>Drum-Kit</strong> (Taste drücken macht Sound + Bild-Effekt, nach dem Vorbild von JavaScript30 Tag 1) ODER eine <strong>Live-Uhr</strong> (aktualisiert sich jede Sekunde, JavaScript30-Tag-2-Stil).</li>
+        <li>Bau die HTML- und CSS-Grundlage — du weißt wie.</li>
+        <li>Füge einen <code>addEventListener</code> hinzu und lausche auf mindestens zwei verschiedene Eingaben: Mausklick und Tastatur.</li>
+        <li>Prüfe die Konsole: Sie sollte keine Fehler zeigen. Wenn doch — Schatzkarte.</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M2.1-1"> die Seite auf mindestens zwei verschiedene Eingaben reagiert</label>
+        <label class="check"><input type="checkbox" data-check="M2.1-2"> du mindestens 30 Zeilen selbst getippt hast</label>
+        <label class="check"><input type="checkbox" data-check="M2.1-3"> die Konsole leer ist</label>
+      </fieldset>
+    </article>
+
+    <article class="mission" data-mission="M2.2" data-xp="250">
+      <header class="mission-head">
+        <h4>M2.2 „To-Do-Liste“</h4>
+        <span class="xp-chip">Kern-Mission · 250 XP</span>
+      </header>
+      <p>Das Herzstück des gesamten Kurses. Klingt unspektakulär? Es ist die Mutter fast aller Apps: Eingabe, Liste, Speichern. Wer diese App ganz ohne Hilfsmittel bauen kann, ist Programmiererin. Vollständig.</p>
+      <ol>
+        <li>Bau das Grundgerüst aus Level 1: Eingabefeld, „Hinzufügen“-Button, eine leere Liste.</li>
+        <li>Klick auf „Hinzufügen“ lässt einen neuen Listeneintrag erscheinen (mit <code>querySelector</code> das Eingabefeld holen, einen Eintrag bauen, in die Liste hängen).</li>
+        <li>Ein Klick auf einen Eintrag hakt ihn ab (durchgestrichen, per <code>classList</code>), ein X löscht ihn.</li>
+        <li>Der Feuerwerk-Schritt: Speichere die Liste in <code>localStorage</code> (mit <code>JSON.stringify</code>) und lade sie beim Seitenstart zurück (mit <code>JSON.parse</code>).</li>
+        <li>Der Neustart-Test: Browser zu, Browser auf. Ist die Liste noch da? Wenn ja: Dieses Gefühl merken.</li>
+        <li>JavaScript30-Videos zur Lösung anschauen ist erlaubt — tippen tust du trotzdem selbst, in deinem eigenen Code.</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M2.2-1"> Hinzufügen, Abhaken und Löschen ohne Seiten-Reload funktionieren</label>
+        <label class="check"><input type="checkbox" data-check="M2.2-2"> die Liste einen Browser-Neustart überlebt</label>
+        <label class="check"><input type="checkbox" data-check="M2.2-3"> die Konsole sauber ist</label>
+        <label class="check"><input type="checkbox" data-check="M2.2-4"> du den Erklär-Test bestehst: <code>addEventListener</code> und <code>localStorage</code> in je zwei Sätzen erklärt</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-boss" data-mission="M2.3" data-xp="500">
+      <header class="mission-head">
+        <h4>M2.3 BOSS „Wahl-Mission“</h4>
+        <span class="xp-chip">Boss-Mission · 500 XP</span>
+      </header>
+      <p>Dein Boss, deine Wahl. Wähle genau das Projekt, auf das du am meisten Lust hast — das ist der Interessen-Check in Reinform:</p>
+      <ul class="choice-list">
+        <li><strong>Rechner</strong> — Ziffernblock, + − × ÷, Komma, plus Fehler-Behandlung (was passiert bei Division durch 0?)</li>
+        <li><strong>Quiz</strong> — 5+ Fragen aus einem Array, Punktestand, Endauswertung</li>
+        <li><strong>Whack-a-Mole</strong> — Timer, Score, Highscore in <code>localStorage</code></li>
+      </ul>
+      <ol>
+        <li>Skizziere auf Papier: Was passiert bei welchem Klick? Was kommt zuerst?</li>
+        <li>Zerlege das Projekt in kleine Funktionen. Eine Funktion, eine Aufgabe.</li>
+        <li>Bau Schritt für Schritt, mit der Konsole als Werkzeug nebenbei.</li>
+        <li><strong>Die Change-Request-Challenge:</strong> Deine Eltern fordern eine kleine Veränderung („bau mal einen Reset-Button dazu“). Und du baust sie selbst ein. Das ist keine Schikane, das ist die Realität: So kommen Anforderungen in echten Teams.</li>
+        <li>Debuggen wie ein Profi: Fehlermeldung lesen, Zeile finden, fixen, weiter.</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M2.3-1"> alles ohne Konsolen-Fehler läuft (auch nach Reload und Back)</label>
+        <label class="check"><input type="checkbox" data-check="M2.3-2"> du zwei Funktionen deines Projekts im Erklär-Test erklärt hast</label>
+        <label class="check"><input type="checkbox" data-check="M2.3-3"> die Change-Request-Challenge bestanden ist</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-side" data-mission="N2.1" data-xp="500">
+      <header class="mission-head">
+        <h4>N2.1 Nebenquest „JS30-Streak“</h4>
+        <span class="xp-chip">Nebenquest · bis zu 500 XP</span>
+      </header>
+      <p>Bau 10 JavaScript30-Projekte deiner Wahl nach (jedes 50 XP). Bonus für Muscle Memory und Streak-Pflege — ersetzt aber nicht die Boss-Mission.</p>
+    </article>
+
+    <div class="level-up">
+      <h3>Level-Up: Der Schlüssel zu Level 3</h3>
+      <fieldset class="checks">
+        <legend>Level-Up-Kriterien</legend>
+        <label class="check"><input type="checkbox" data-check="L2-1"> Die To-Do-Liste (M2.2) funktioniert und du hast sie erklärt</label>
+        <label class="check"><input type="checkbox" data-check="L2-2"> Die Boss-Mission (M2.3) ist fertig, inklusive Change-Request-Challenge</label>
+        <label class="check"><input type="checkbox" data-check="L2-3"> Erklär-Test: „Was macht <code>addEventListener</code>?“ — zwei Sätze, ohne Bildschirm</label>
+        <label class="check"><input type="checkbox" data-check="L2-4"> Du hast mindestens 3 eigene Bugs selbst gefunden und gefixt (Konsole gelesen, nicht geraten)</label>
+      </fieldset>
+      <p class="badge-award">Wenn alles drin ist: <strong>Badge „Gehirnchirurgin“</strong> — und du darfst ab jetzt offiziell „TypeScript“ sagen. Im nächsten Level lernst du eine Sprache, die ganze Fehlerklassen gar nicht erst entstehen lässt.</p>
+    </div>
+  </section>
+
+  <section class="level" id="level-3" aria-labelledby="level-3-heading" data-level-section="3">
+    <div class="level-head">
+      <span class="level-num" aria-hidden="true">3</span>
+      <div>
+        <h2 id="level-3-heading">Schutzschild <span class="level-sub">(TypeScript)</span></h2>
+        <p class="level-stats"><strong>Dauer:</strong> 4–5 Wochen (ca. 16 h) · <strong>Werkzeug:</strong> zuerst der <a href="https://www.typescriptlang.org/play" target="_blank" rel="noopener">TypeScript Playground</a> (null Installation), ab der Boss-Mission ein lokales Setup mit Vite (einmalig, ca. 30 Min., Eltern-Hilfe ausdrücklich erlaubt). · <strong>Badge am Ende:</strong> Schildträgerin</p>
+      </div>
+    </div>
+    <div class="level-progress">
+      <div class="progress-bar" role="progressbar" aria-label="Fortschritt Level 3" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-level-progress-bar="3"><div class="progress-fill"></div></div>
+      <p class="progress-label" data-level-progress-label="3">0 % erledigt</p>
+    </div>
+
+    <h3>Warum dieses Level</h3>
+    <p>Stell dir vor: Deine App läuft super, deine Freundin benutzt sie, drei Wochen später crasht sie. Warum? Weil irgendwo einmal ein Tippfehler drin war oder ein Wert dort gelandet ist, wo ein anderer hätte sein sollen. JavaScript merkt sich nicht, was in eine Variable gehört. Es vertraut dir blind — bis es zur falschen Zeit auffliegt.</p>
+    <p>TypeScript ist JavaScript mit eingebautem Korrektur-Lektor. Du schreibst kleine Zettel an deine Werte: „hier kommt immer eine Zahl rein“, „eine Aufgabe ist immer ein Objekt aus <code>id</code>, <code>text</code> und <code>done</code>“. Und ein Prüfer (der Compiler) liest alles Korrektur, bevor die App überhaupt startet. Warte ab, wie viel er in deinem „fertigen“ Code findet, das JavaScript blind durchgewunken hätte.</p>
+    <p>Das klingt nach Meckern. Ist es nicht: Jeder Fehler, der beim Tippen angezeigt wird, ist einer, der nicht drei Wochen später bei deiner Freundin auffliegt. Und keine Sorge, was du hier tippst, wird beim Start automatisch in normales JavaScript übersetzt. Im Browser läuft am Ende genau das JS, das du schon kennst. Nur eben das geprüfte.</p>
+
+    <h3>Was du lernst (und wofür es gut ist)</h3>
+    <ul>
+      <li><strong>Der Unterschied zwischen typisiertem und untypisiertem Code</strong>, erklärt an deinem eigenen Beispiel.</li>
+      <li><strong>Variablen mit expliziten Typen</strong>, Funktionen mit typisierten Parametern und Rückgabewerten: dein Schild gegen Tippfehler.</li>
+      <li><strong>Eigene Interfaces definieren</strong>, z. B. <code>Todo</code> mit <code>id</code>, <code>text</code>, <code>done</code>: eine Bauplan-Beschreibung deiner Daten. Wofür: Jeder, der deinen Code liest (auch du in drei Monaten), weiß sofort, was los ist.</li>
+      <li><strong>Union-Types und Literal-Types</strong>, z. B. <code>"leicht" | "mittel" | "schwer"</code>: Werte, die nur aus einer festen Auswahl kommen dürfen. Wofür: kein Kaputtgehen durch unerwartete Eingaben.</li>
+      <li><strong>TypeScript-Fehlermeldung lesen</strong> und den Fehler selbst beheben.</li>
+      <li><strong><code>any</code> vermeiden, <code>readonly</code> und optionale Properties verstehen.</strong> (Grob: <code>any</code> heißt „lieber gar keinen Typ angeben“ — und genau das entfernt dein Schild. <code>readonly</code> schützt Werte davor, versehentlich geändert zu werden.)</li>
+    </ul>
+
+    <h3>Deine Ressourcen</h3>
+    <div class="resource-grid">
+      <a class="resource-card" href="https://www.typescriptlang.org/play" target="_blank" rel="noopener">
+        <span class="res-title">TypeScript Playground</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Hier startest du: Code eintippen, sofort Feedback, nichts installieren.</span>
+      </a>
+      <a class="resource-card" href="https://www.typescriptlang.org/docs/" target="_blank" rel="noopener">
+        <span class="res-title">TypeScript Handbook (offizielle Doku)</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Deine Haupt-Referenz, inklusive eines extra Abschnitts „TypeScript für den neuen Programmierer“.</span>
+      </a>
+      <a class="resource-card" href="https://scrimba.com/" target="_blank" rel="noopener">
+        <span class="res-title">Scrimba: „Learn TypeScript“</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Die interaktive Variante: 79 Lektionen, 4 Stunden, hands-on.</span>
+      </a>
+      <a class="resource-card" href="https://fullstackopen.com/en/part9" target="_blank" rel="noopener">
+        <span class="res-title">Full Stack Open, Part 9 (Uni Helsinki)</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Optional, für wenn der Hunger größer wird als der Level-Plan.</span>
+      </a>
+    </div>
+    <p class="hint">Ehrliche Warnung für dieses Level: TypeScript ist das erste Thema deines Abenteuers, das es offiziell nur auf Englisch gibt. Das ist okay. Die wichtigsten Fachwörter kennst du schon aus dem Tippen, und Lernvideo-Englisch ist langsamer als Schulenglisch. Deine Strategie: Fehlermeldung lesen → Playground ausprobieren → Handbook nachschauen.</p>
+
+    <h3>Deine Missionen</h3>
+
+    <article class="mission" data-mission="M3.1" data-xp="250">
+      <header class="mission-head">
+        <h4>M3.1 „To-Do, jetzt typsicher!“</h4>
+        <span class="xp-chip">Kern-Mission · 250 XP</span>
+      </header>
+      <p>Deine To-Do-Liste aus Level 2 geht zurück an die Werkbank und lässt sich nach TypeScript übersetzen. Gleiches Können, gleiche Features — aber mit Schild:</p>
+      <ol>
+        <li>Definiere ein Interface für deine Aufgaben: <code>interface Todo { id: number; text: string; done: boolean }</code>.</li>
+        <li>Tippe deine Funktionen: jeden Parameter mit Typ, jeden Rückgabewert mit Typ.</li>
+        <li>Bau mindestens einen Union-Type ein, z. B. eine Priorität <code>"leicht" | "mittel" | "schwer"</code> pro Aufgabe oder einen Filter-Status <code>"alle" | "offen" | "erledigt"</code>.</li>
+        <li>Lass den Compiler arbeiten: Behebe jeden Fehler, den er anmeckert, und führe Buch. Dokumentiere 3 seiner Funde (jeweils ein Satz: Was hat er gefunden? Was hast du daraus gelernt?).</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M3.1-1"> dein Projekt ohne TypeScript-Fehler kompiliert</label>
+        <label class="check"><input type="checkbox" data-check="M3.1-2"> alle Features aus Level 2 noch da sind</label>
+        <label class="check"><input type="checkbox" data-check="M3.1-3"> mindestens ein Interface und ein Union-Type drin sind</label>
+        <label class="check"><input type="checkbox" data-check="M3.1-4"> 3 Compiler-Funde dokumentiert sind (je 1 Satz)</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-boss" data-mission="M3.2" data-xp="500">
+      <header class="mission-head">
+        <h4>M3.2 BOSS „Typsichere Wunsch-App“</h4>
+        <span class="xp-chip">Boss-Mission · 500 XP</span>
+      </header>
+      <p>Wähle nach Interesse: <strong>Einkaufsliste</strong> ODER <strong>Rezept-App</strong> ODER dein <strong>Level-2-Quiz</strong> — jetzt komplett typisiert. Mehrere Interfaces, Arrays von Objekten, mindestens eine Funktion mit typisiertem Parameter UND Rückgabewert. Hauptsache, du freust dich aufs Bauen.</p>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M3.2-1"> kompiliert ohne Fehler</label>
+        <label class="check"><input type="checkbox" data-check="M3.2-2"> alle Features komplett sind</label>
+        <label class="check"><input type="checkbox" data-check="M3.2-3"> Erklär-Test bestanden: „Was ist ein Interface und warum hilft es dir?“</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-side" data-mission="N3.1" data-xp="100">
+      <header class="mission-head">
+        <h4>N3.1 Nebenquest „Playground-Puzzle“</h4>
+        <span class="xp-chip">Nebenquest · bis zu 100 XP</span>
+      </header>
+      <p>Experimentier im Playground: Was passiert bei <code>readonly</code>? Was bei einem falschen Rückgabewert? Drei eigene Mini-Experimente, jeweils ein Satz Erkenntnis.</p>
+    </article>
+
+    <div class="level-up">
+      <h3>Level-Up: Der Schlüssel zu Level 4</h3>
+      <fieldset class="checks">
+        <legend>Level-Up-Kriterien</legend>
+        <label class="check"><input type="checkbox" data-check="L3-1"> M3.1: To-Do typsicher, 3 Compiler-Funde dokumentiert</label>
+        <label class="check"><input type="checkbox" data-check="L3-2"> M3.2: Boss-App kompiliert sauber und ist erklärt</label>
+        <label class="check"><input type="checkbox" data-check="L3-3"> Erklär-Test: „Was ist der Unterschied zwischen TypeScript und JavaScript — und warum nimmt man überhaupt TypeScript?“ (3 Sätze)</label>
+        <label class="check"><input type="checkbox" data-check="L3-4"> Du hast mindestens 3 Typ-Fehler allein anhand der Fehlermeldung behoben (ohne dass dir jemand die Lösung vorsagt)</label>
+      </fieldset>
+      <p class="badge-award">Danach: <strong>Badge „Schildträgerin“</strong>. Die Baumeister-Werkbank wartet schon.</p>
+    </div>
+  </section>
+
+  <section class="level" id="level-4" aria-labelledby="level-4-heading" data-level-section="4">
+    <div class="level-head">
+      <span class="level-num" aria-hidden="true">4</span>
+      <div>
+        <h2 id="level-4-heading">Baumeisterin <span class="level-sub">(React oder Vue)</span></h2>
+        <p class="level-stats"><strong>Dauer:</strong> 8–10 Wochen (ca. 32 h) · <strong>Voraussetzung:</strong> die eiserne Regel erfüllt — Level 2 und 3 abgeschlossen · <strong>Werkzeug:</strong> zuerst die offiziellen Tutorials direkt im Browser (react.dev bzw. vuejs.org, kein Setup nötig), erst später lokales Setup mit Vite. Ein paar Terminal-Befehle sind jetzt okay — du hast ja gelernt, dass eine Fehlermeldung nur eine Schatzkarte ist. · <strong>Badge am Ende:</strong> Baumeisterin</p>
+      </div>
+    </div>
+    <div class="level-progress">
+      <div class="progress-bar" role="progressbar" aria-label="Fortschritt Level 4" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-level-progress-bar="4"><div class="progress-fill"></div></div>
+      <p class="progress-label" data-level-progress-label="4">0 % erledigt</p>
+    </div>
+
+    <h3>Warum dieses Level</h3>
+    <p>Jetzt wird gebaut wie mit LEGO. Komponenten sind Bausteine, die du einmal baust und überall wiederverwendest, statt jede Seite Stein für Stein neu zu mauern. Und jetzt verstehst du auch, WARUM es React und Vue überhaupt gibt: weil du in Level 2 selbst gespürt hast, wie viel Arbeit das manuelle Aktualisieren einer Liste ist. Frameworks lösen genau dieses Problem. Ohne dieses eigene Erleben wäre React Zauberei. Mit ihm ist es ein Werkzeug, und du weißt jederzeit, was unter der Haube passiert.</p>
+
+    <p><strong>React oder Vue?</strong> Hilfe zur Entscheidung:</p>
+    <ul>
+      <li><strong>Vue</strong> liegt näher an dem HTML, das du schon kannst (Templates sehen fast wie HTML aus) — oft der sanftere Einstieg.</li>
+      <li><strong>React</strong> ist der Industriestandard: mehr Jobs, mehr Community, mehr Antworten im Netz.</li>
+    </ul>
+    <p>Beide Wege sind okay. Schnuppere je eine Tutorial-Stunde in beide, entscheide dann EIN Mal für das ganze Level und bleib dabei (ständiges Hin- und Herwechseln kostet dich nur Zeit und Motivation). Und jetzt die gute Nachricht: Die offiziellen Tutorials beider Frameworks gibt es komplett auf Deutsch.</p>
+
+    <h3>Was du lernst (und wofür es gut ist)</h3>
+    <ul>
+      <li><strong>Komponenten, Props und State:</strong> Props sind die Zettel, die eine Komponente von ihrer Mutter mitbekommt; State ist ihr eigenes Gedächtnis. Wofür: Große Apps bleiben beherrschbar.</li>
+      <li><strong>UIs aus wiederverwendbaren Komponenten</strong> zusammensetzen (Button, Card, List-Item …).</li>
+      <li><strong>Listen rendern</strong> (<code>.map</code> + <code>key</code>) und bedingtes Rendern: deine To-Do-Kunst aus Level 2, jetzt elegant.</li>
+      <li><strong>Formulare mit kontrollierten Inputs</strong> bauen.</li>
+      <li><strong>Erklären, welches Problem ein Framework löst</strong> — nämlich genau das, das du in Level 2 selbst gelöst hast. Das ist dein Aha-Moment, und der gehört dir.</li>
+      <li><strong>Eine Framework-App deployen</strong> (GitHub Pages, Netlify, Vercel), damit die Welt sie benutzen kann.</li>
+    </ul>
+
+    <h3>Deine Ressourcen</h3>
+    <div class="resource-grid">
+      <a class="resource-card" href="https://de.react.dev/learn" target="_blank" rel="noopener">
+        <span class="res-title">React-Tutorial „Lerne React“ (offiziell)</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Hauptpfad Option A: das komplette offizielle Tutorial, auf Deutsch.</span>
+      </a>
+      <a class="resource-card" href="https://de.vuejs.org/guide/" target="_blank" rel="noopener">
+        <span class="res-title">Vue-Guide (offiziell)</span>
+        <span class="res-lang lang-de">Deutsch · frei</span>
+        <span class="res-desc">Hauptpfad Option B: sanfter und HTML-nah, ebenfalls komplett auf Deutsch.</span>
+      </a>
+      <a class="resource-card" href="https://scrimba.com/" target="_blank" rel="noopener">
+        <span class="res-title">Scrimba: React- und Vue-Kurse</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Interaktive Ergänzung, wenn du nach dem Tutorial vertiefen willst.</span>
+      </a>
+      <a class="resource-card" href="https://fullstackopen.com/en/" target="_blank" rel="noopener">
+        <span class="res-title">Full Stack Open (Uni Helsinki)</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Optionales Endgame: React plus Backend, Uni-Niveau — für danach.</span>
+      </a>
+      <a class="resource-card" href="https://htmx.org/" target="_blank" rel="noopener">
+        <span class="res-title">htmx</span>
+        <span class="res-lang lang-en">Englisch · frei</span>
+        <span class="res-desc">Das bewusste Gegenmodell (ein winziges Werkzeug statt Riesenbaukasten), dem die Nebenquest N4.1 gewidmet ist.</span>
+      </a>
+    </div>
+
+    <h3>Deine Missionen</h3>
+
+    <article class="mission" data-mission="M4.1" data-xp="250">
+      <header class="mission-head">
+        <h4>M4.1 „To-Do, das dritte Mal“</h4>
+        <span class="xp-chip">Kern-Mission · 250 XP</span>
+      </header>
+      <p>Deine To-Do-Liste kommt ein drittes Mal an die Werkbank, jetzt als Komponenten-App: <code>TodoInput</code>, <code>TodoList</code>, <code>TodoItem</code>, der State wohnt in der übergeordneten Komponente — ein Ort, der die Wahrheit über alle Aufgaben kennt. Gleiche Funktionen wie in Level 2 und 3. Und schau einmal, wie viel weniger Code du jetzt brauchst und wie ordentlich alles bleibt.</p>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M4.1-1"> die App ohne Konsolen-Warnungen läuft</label>
+        <label class="check"><input type="checkbox" data-check="M4.1-2"> du ihre Komponenten-Struktur auf Papier zeichnen kannst („wer rendert wen?“)</label>
+        <label class="check"><input type="checkbox" data-check="M4.1-3"> sie deployed ist</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-boss" data-mission="M4.2" data-xp="500">
+      <header class="mission-head">
+        <h4>M4.2 BOSS „Dein eigenes Projekt“</h4>
+        <span class="xp-chip">Boss-Mission · 500 XP</span>
+      </header>
+      <p>Deine App. Deine Idee. Das Finale. Vorschläge, falls die Muse mal Urlaub macht: Rezept-Sammlung mit Filtern, Countdown-/Timer-Widget, Meme-Generator, Haustier-Tagebuch, Fan-Quiz mit Highscores.</p>
+      <ol>
+        <li>Plane auf Papier: Welche Komponenten brauchst du? Wer rendert wen?</li>
+        <li>Bau mindestens 3 eigene Komponenten, eine gerenderte Liste und ein Formular.</li>
+        <li>Speichere die Daten: <code>localStorage</code> reicht, oder (wenn deine Eltern helfen) eine kleine echte Cloud-Anbindung wie Firebase oder Supabase.</li>
+        <li>Bring deine App live — Handy-Link, Oma-Test.</li>
+        <li>Schreib ein <code>README.md</code> mit 3 ehrlichen eigenen Sätzen: „Was macht meine App?“</li>
+        <li><strong>Der Demo-Day:</strong> Führe dem Eltern-Team live auf dem Handy ein Feature vor. Vorführen gehört zum Job.</li>
+      </ol>
+      <fieldset class="checks">
+        <legend>Fertig, wenn …</legend>
+        <label class="check"><input type="checkbox" data-check="M4.2-1"> deployed und per Handy-Link erreichbar (Oma-Test bestanden)</label>
+        <label class="check"><input type="checkbox" data-check="M4.2-2"> README.md mit 3 ehrlichen eigenen Sätzen geschrieben</label>
+        <label class="check"><input type="checkbox" data-check="M4.2-3"> der Demo-Day überstanden</label>
+      </fieldset>
+    </article>
+
+    <article class="mission mission-side" data-mission="N4.1" data-xp="100">
+      <header class="mission-head">
+        <h4>N4.1 Nebenquest „htmx-Gedankenexperiment“</h4>
+        <span class="xp-chip">Nebenquest · 100 XP</span>
+      </header>
+      <p>Bau ein Mini-Widget (z. B. einen Counter oder eine Suche) mit htmx und vergleiche in 3 ehrlichen Sätzen: Was war einfacher als bei React? Und was nervt? Es gibt keine falsche Antwort. Der Punkt ist das DENKEN darüber.</p>
+    </article>
+
+    <div class="level-up">
+      <h3>Level-Up: Kurs abgeschlossen</h3>
+      <fieldset class="checks">
+        <legend>Level-Up-Kriterien</legend>
+        <label class="check"><input type="checkbox" data-check="L4-1"> M4.1: Komponenten-App deployed, Struktur gezeichnet und erklärt</label>
+        <label class="check"><input type="checkbox" data-check="L4-2"> M4.2: Eigenes Projekt deployed, README geschrieben, Demo-Day bestanden</label>
+        <label class="check"><input type="checkbox" data-check="L4-3"> Erklär-Test: „Welches Problem löst React — und warum tat das in Level 2 ohne Framework weh?“</label>
+      </fieldset>
+      <p class="badge-award">Wenn alle Haken drin sind: <strong>Badge „Baumeisterin“</strong> — Kurs abgeschlossen.</p>
+    </div>
+  </section>
+
+  <section class="finale" aria-labelledby="finale-heading">
+    <h2 id="finale-heading">Und danach?</h2>
+    <p>Vor ein paar Monaten hattest du eine leere Textdatei. Jetzt hast du mehrere gedebuggte, typisierte, funktionierende Apps, davon mehrere live im Internet, mit echten Links, die Menschen benutzen. Dieses Gefühl ist deins, und niemand kann es dir nehmen. Feier diesen Moment richtig groß.</p>
+    <p><strong>Das Endgame (optional):</strong> Wenn du danach immer noch Hunger hast, wartet der professionelle Pfad: <a href="https://www.theodinproject.com/" target="_blank" rel="noopener"><strong>The Odin Project</strong></a> (Voll-Stack bis zur eigenen Linux-Umgebung) oder <a href="https://fullstackopen.com/en/" target="_blank" rel="noopener"><strong>Full Stack Open</strong></a> (React plus Backend, Uni Helsinki). Mit einem Portfolio aus 8+ eigenen Projekten im Gepäck gehörst du dort längst nicht mehr zu den Anfängerinnen. Und wenn dir Community fehlt: Rund um freeCodeCamp und die Framework-Communities gibt es freundliche Orte zum Fragen und Vorzeigen.</p>
+  </section>
+
+  <section class="callout parents" aria-labelledby="eltern-heading">
+    <h2 id="eltern-heading">Für das Eltern-Team</h2>
+    <p>Kurz und ehrlich, damit ihr sie begleiten könnt, ohne ihr hineinzureden:</p>
+    <ul>
+      <li><strong>Session-Rhythmus:</strong> unter der Woche 2–3 kurze Sessions (20–45 Minuten) plus am Wochenende eine Projekt-Session (60–90 Minuten). Qualität schlägt Quantität: eine konzentrierte halbe Stunde ist mehr wert als zwei müde.</li>
+      <li><strong>Streak zählt wöchentlich</strong> (mind. 2 Sessions = Streak-Woche), mit 4 Streak-Freezes pro Level für Krankheit und Klausurenphasen. Eine verpasste Woche killt die Streak nie. Nicht darüber motzen — der Freeze existiert genau dafür.</li>
+      <li><strong>Feste Feiern:</strong> Nach jeder Boss-Mission eine echte Celebration (Essen gehen, Filmabend, was immer bei euch passt). Das Gehirn verknüpft Lernen mit Gewinn, nicht mit Pflicht.</li>
+      <li><strong>Erklär-Tests ernst nehmen:</strong> Erklären-Können ist der beste Lern-Indikator ohne Prüfung. Gummiente, Eltern, Freundin — Hauptsache laut und ohne Bildschirm.</li>
+      <li><strong>Nicht vorsagen.</strong> Fragt stattdessen: „Was sagt die Konsole?“ — „Was hast du schon probiert?“ Die Change-Request-Challenge der Boss-Missionen übt genau das.</li>
+      <li><strong>Terminal- und Setup-Frust vermeiden:</strong> Der Plan meidet Terminals bis Level 3 (dort startet TypeScript im Playground) und lokalisiert Setup auf eine einmalige, ca. 30-minütige Session in Level 3/4 mit eurer Hilfe. Einstieg low-friction (SELFHTML, Scrimba — alles im Browser), der professionelle Pfad (The Odin Project, Full Stack Open) kommt bewusst erst als Endgame. Genau dieses Hybrid-Modell ist der Grund, warum der Lernpfad nicht an „Command not found“ scheitert.</li>
+      <li><strong>Interessen-Check mitdenken:</strong> Lieblingsband? Streamer? Spiel? Sport? Anime? Haustier? Die Boss-Missionen haben Wahlmöglichkeiten, und je persönlicher das Projekt, desto stärker der Motivationshebel. Helft ihr, die Wahlmöglichkeiten zu personalisieren.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Gebaut mit ❤️ als Lernprojekt · <a href="https://github.com/jkrauss/lernabenteuer-webdev">Quellcode auf GitHub</a> · Dein Fortschritt wird nur lokal in deinem Browser gespeichert.</p>
+  </div>
+</footer>
+
 </body>
 </html>
-
