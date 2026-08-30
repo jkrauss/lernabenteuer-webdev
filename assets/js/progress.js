@@ -17,12 +17,6 @@
     'M4.1': 250, 'M4.2': 500, 'N4.1': 100
   };
 
-  /* Missionen ohne eigene Checkliste: zählen als erledigt, sobald
-     die Level-Up-Kriterien des Levels komplett sind. */
-  var MISSION_WITHOUT_CHECKS = {
-    'N1.1': 'L1', 'N2.1': 'L2', 'N3.1': 'L3', 'N4.1': 'L4'
-  };
-
   var LEVEL_BADGES = {
     1: 'Gerüstbauerin',
     2: 'Gehirnchirurgin',
@@ -30,7 +24,6 @@
     4: 'Baumeisterin'
   };
   var TOTAL_LEVELS = 4;
-  var CORE_XP_TOTAL = 3200;
 
   /* ---------- State ---------- */
 
@@ -43,6 +36,10 @@
       badges: {},     /* "1": true     (Level-Badge freigeschaltet?) */
       unlocked: { 1: true }  /* freigeschaltete Level */
     };
+  }
+
+  function isUnlocked(level) {
+    return !!state.unlocked[level];
   }
 
   function loadState() {
@@ -104,7 +101,7 @@
   }
 
   function levelProgress(level) {
-    var boxes = $all('input[data-check^="M' + level + '."], input[data-check^="L' + level + '-"]');
+    var boxes = $all('input[data-check^="M' + level + '."], input[data-check^="L' + level + '-"], input[data-quest-level="' + level + '"]');
     if (boxes.length === 0) return { done: 0, total: 0, pct: 0 };
     var done = boxes.filter(function (box) {
       return !!state.checks[box.getAttribute('data-check')];
@@ -113,9 +110,13 @@
   }
 
   function isMissionDone(missionId) {
-    if (state.missions[missionId]) return true;
-    var noChecks = MISSION_WITHOUT_CHECKS[missionId];
-    if (noChecks) return groupDone(noChecks);
+    return computeMissionDone(missionId);
+  }
+
+  function computeMissionDone(missionId) {
+    /* Nebenquests: eigene „erledigt“-Checkbox (data-quest). */
+    var questBox = $('input[data-quest="' + missionId + '"]');
+    if (questBox) return !!state.checks[questBox.getAttribute('data-check')];
     return groupDone(missionId);
   }
 
@@ -157,7 +158,7 @@
     /* 1. Neue Badges vergeben (VOR dem HUD-Update, damit der Zähler
           im selben Rendern aktuell ist). */
     for (var lvl = 1; lvl <= TOTAL_LEVELS; lvl++) {
-      if (!state.badges[lvl] && isLevelComplete(lvl)) {
+      if (!state.badges[lvl] && isUnlocked(lvl) && isLevelComplete(lvl)) {
         state.badges[lvl] = true;
         var next = lvl + 1;
         if (next <= TOTAL_LEVELS) state.unlocked[next] = true;
@@ -201,11 +202,30 @@
     var hudProgress = $('#hud-progress');
     if (hudProgress) hudProgress.textContent = overallProgressPct() + '\u2009%';
 
-    /* 4. Level-Optik: abgeschlossen / offen */
+    /* 4. Level-Optik + Gating: Checkboxen in gesperrten Leveln
+          deaktivieren (feste Reihenfolge wird echt erzwungen). */
     $all('.level[data-level-section]').forEach(function (section) {
       var lvl2 = parseInt(section.getAttribute('data-level-section'), 10);
+      var locked = !isUnlocked(lvl2);
       section.classList.toggle('level-complete', !!state.badges[lvl2]);
-      section.classList.toggle('level-locked', !state.unlocked[lvl2]);
+      section.classList.toggle('level-locked', locked);
+      section.querySelectorAll('input[data-check]').forEach(function (box) {
+        box.disabled = locked;
+      });
+      var lockHint = section.querySelector('.lock-hint');
+      if (locked && !lockHint) {
+        var hint = document.createElement('p');
+        hint.className = 'lock-hint';
+        hint.textContent = '🔒 Dieses Level schaltet frei, sobald du das vorige Level abgeschlossen hast.';
+        var head = section.querySelector('.level-head');
+        if (head) {
+          section.insertBefore(hint, head.nextSibling);
+        } else {
+          section.insertBefore(hint, section.firstChild);
+        }
+      } else if (!locked && lockHint) {
+        lockHint.remove();
+      }
     });
 
     saveState();

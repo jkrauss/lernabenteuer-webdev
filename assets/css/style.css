@@ -648,6 +648,25 @@ h3 {
   background: var(--ink-soft);
 }
 
+.lock-hint {
+  margin: 0 0 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: var(--platinum);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.check input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+.check:has(input:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* ---------- Finale ---------- */
 
 .finale {
